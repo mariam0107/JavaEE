@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Confirmation</title>
+        <h:outputStylesheet library="css" name="myStyle.css"/>
+    </h:head>
+    <h:body>
+        Congratulations #{studentBean.firstName}
+        You are now registered #{studentBean.firstName} #{studentBean.lastName}!<br/>
+        You have now sucessfully registered for:<br/><br/>
+        #{studentBean.subject.subject1}<br/>
+        #{studentBean.subject.subject2}<br/>
+        #{studentBean.subject.subject3}<br/>
+        #{studentBean.subject.subject4}<br/>
+        
+        By the way #{studentBean.age} is a good name !<br/>
+        
+    </h:body>
+</html>
+

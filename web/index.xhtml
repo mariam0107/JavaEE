@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "htth://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Student Registration</title>
+        <h:outputStylesheet library="css" name="myStyle.css"/>
+        <h:outputScript library="js" name="myJs.js"/>
+    </h:head>
+    <h:body>
+        <h:form>    
+            <h1>LEXICON</h1>
+            <h:panelGrid columns="1" style="margin:0 auto;">
+                <h:outputText value="STUDENT REGISTRATION" id="rubtik"/>
+                <h:panelGroup/>
+            </h:panelGrid>
+            <h3>STUDENT REGISTRATION</h3>
+            <h:panelGrid columns="2" style="margin:0 auto;">
+                <p:outputLabel for="firstName" value="First Name"/>
+                <p:inputText id="firstName" value='#{studentBean.firstName}'/>
+
+                <p:outputLabel for="lastName" value="Last Name"/>
+                <p:inputText id="lastName" value='#{studentBean.lastName}'/>
+
+                <p:outputLabel for="age" value="Age"/>
+                <p:inputText id="age" value='#{studentBean.age}'/>
+
+                <p:outputLabel for="subject1" value="Subject 1"/>
+                <p:inputText id="subject1" value='#{studentBean.subject.subject1}'/>
+
+                <p:outputLabel for="subject2" value="Subject 2"/>
+                <p:inputText id="subject2" value='#{studentBean.subject.subject2}'/>
+
+                <p:outputLabel for="subject3" value="Subject 3"/>
+                <p:inputText id="subject3" value='#{studentBean.subject.subject3}'/>
+
+                <p:outputLabel for="subject4" value="Subject 4"/>
+                <p:inputText id="subject4" value='#{studentBean.subject.subject4}'/>
+
+                <p:outputLabel for="location" value="Campus"/>
+                <p:selectOneMenu id="location" value="#{studentBean.nav.location}" required="true">
+                    <f:selectItem itemLabel="ort" itemValue=""/>
+                    <f:selectItem itemLabel="Stockholm" itemValue="Stockholm"/>
+                    <f:selectItem itemLabel="Göteborg" itemValue="Göteborg"/>
+                </p:selectOneMenu>
+                <p:outputLabel for="effect" value="Date:" />
+                <p:calendar id="effect" value="#{studentBean.date}" effect="fold" />
+
+                <h:panelGroup/>
+                
+            </h:panelGrid>
+            
+           
+                
+            <p:commandButton value="Submit" action="#{studentBean.saveStudent()}"/>               
+            <p:inputText id="testText" value='#{studentBean.chosenOne}'/>                                
+            <p:commandButton value="Test Click" action="#{studentBean.testClick()}" />                                
+        </h:form>
+        <h:form>
+            <p:outputLabel for="remove" value="Enter the id to be removed"/>
+            <p:inputText id="remove" value='#{studentBean.chosenOne}'/>
+            <p:commandButton value="Delete ID" action="#{studentBean.deleteStudent()}"/> 
+        </h:form>
+        <h:form><p:commandButton value="SHOW DATABASE" action="#{studentBean.fillArrayFromDb()}"/></h:form>
+    
+ 
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Primefaces welcome page" />
+    </h:body>
+</html>
+

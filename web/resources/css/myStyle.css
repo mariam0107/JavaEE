@@ -1,0 +1,19 @@
+body{
+    font-family: "Times New Roman";
+    font-size: 14px;
+    font-style: bold;
+    
+    background-image: url("Img/IMG_0995.JPG");
+    color:black;
+    background-size:100%;
+    
+}
+h1
+{
+    color:#cc0000;
+    font-size: xx-large;
+}
+#rubtik{
+    font-size: x-large;
+    font-style: oblique;
+}
